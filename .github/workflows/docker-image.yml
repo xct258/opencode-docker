@@ -58,5 +58,3 @@ jobs:
           platforms: linux/amd64,linux/arm64        # 同时构建 x86 和 ARM 版本
           labels: ${{ steps.meta.outputs.labels }}  # 镜像标签信息（metadata-action 生成）
           tags: ${{ steps.meta.outputs.tags }}      # 镜像 tag（包括 latest 和日期 tag）
-          build-args: |
-            OPENCODE_VERSION=

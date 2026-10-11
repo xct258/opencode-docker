@@ -1,0 +1,7 @@
+# 运行时数据与敏感文件不进 git
+workspace/
+config/
+data/
+.env
+# 注意：加密令牌/ 目录下的 *.enc 是密文，故意随项目提交，不在这里忽略；
+# 明文 Token 和密码绝不进仓库（encrypt-token.sh 只经 stdin 读取，不落盘）。

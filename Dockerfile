@@ -1,10 +1,7 @@
 # 使用 中文Debian 作为基础镜像
 FROM xct258/debian-cn
 
-# 构建时可选锁定 opencode 版本（compose 中经 build.args 传入）
-ARG OPENCODE_VERSION=""
-
-# 构建脚本来自构建上下文（自包含；若日后推到 GitHub，可改回从 raw 拉取的 TaskOps 模式）
+# 构建脚本来自构建上下文（自包含）
 COPY 容器构建脚本/init-components.sh /root/tmp/init-components.sh
 COPY 容器构建脚本/start.sh /usr/local/bin/start.sh
 
