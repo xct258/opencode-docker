@@ -11,6 +11,9 @@ RUN chmod +x /root/tmp/init-components.sh \
     && rm -rf /root/tmp \
     && chmod +x /usr/local/bin/start.sh
 
+# 构建时将加密令牌打包进镜像（密文随仓库提交，构建上下文包含 ./加密令牌/）
+COPY 加密令牌/ /secrets/
+
 # opencode 安装目录（init 脚本已同时软链到 /usr/local/bin，双保险）
 ENV PATH="/root/.opencode/bin:${PATH}"
 

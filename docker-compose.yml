@@ -7,7 +7,6 @@ services:
       - ./workspace:/app/workspace                # 工作目录：web 会话的操作目录
       - ./config:/root/.config/opencode           # 配置（opencode.json、鉴权等）
       - ./data:/root/.local/share/opencode        # 会话数据
-      - ./加密令牌:/secrets:ro                     # 加密的 GitHub 令牌（密文随项目提交，只读挂载）
     environment:
       - PORT=${PORT:-4096}
       - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD:-}
