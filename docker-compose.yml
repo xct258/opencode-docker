@@ -1,0 +1,17 @@
+services:
+  opencode:
+    container_name: opencode
+    image: xct258/opencode
+    build:
+      context: .
+      args:
+        - OPENCODE_VERSION=${OPENCODE_VERSION:-}
+    network_mode: host        # 直接占用宿主机 4096（或 PORT 指定端口）
+    volumes:
+      - ./workspace:/app/workspace                # 工作目录：web 会话的操作目录
+      - ./config:/root/.config/opencode           # 配置（opencode.json、鉴权等）
+      - ./data:/root/.local/share/opencode        # 会话数据
+    environment:
+      - PORT=${PORT:-4096}
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD:-}
+    restart: always

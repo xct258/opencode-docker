@@ -1,0 +1,5 @@
+.git
+容器构建脚本/.tmp/
+workspace/
+config/
+data/
